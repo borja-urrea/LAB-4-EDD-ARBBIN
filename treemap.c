@@ -113,7 +113,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    if (tree == NULL) return NULL;
+    if (tree == NULL || tree -> current == NULL) return NULL;
     TreeNode* aux = tree -> current;   
     //en caso de tener derecha :)
     if (aux -> right != NULL){
