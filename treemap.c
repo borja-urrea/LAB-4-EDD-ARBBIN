@@ -126,7 +126,6 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
     //en caso de no tener derecha :(
     
-    TreeNode* p = aux -> parent;
     while (aux -> parent != NULL){
         if(tree -> lower_than(aux -> pair -> key, aux -> parent -> pair -> key) == 1){
             tree -> current = aux -> parent;
