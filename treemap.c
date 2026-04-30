@@ -118,20 +118,20 @@ Pair * nextTreeMap(TreeMap * tree) {
     //en caso de tener derecha :)
     if (aux -> right != NULL){
         aux = aux ->right;
-        while (auxAvance -> left != NULL){
+        while (aux -> left != NULL){
             aux = aux -> left;
         }
         tree -> current = aux;
         return aux -> pair;
     }
     //en caso de no tener derecha :(
-    else{
-        TreeNode* p = aux -> parent;
-        while(p != NULL && aux == p -> right){
-            aux = p;
-            p = p -> parent;
-        }
+    
+    TreeNode* p = aux -> parent;
+    while(p != NULL && aux == p -> right){
+        aux = p;
+        p = p -> parent;
     }
+    
     if (p != NULL) return p -> pair;
 }
 
