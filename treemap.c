@@ -127,11 +127,13 @@ Pair * nextTreeMap(TreeMap * tree) {
     //en caso de no tener derecha :(
     
     TreeNode* p = aux -> parent;
-    while(p != NULL && aux == p -> right){
-        aux = p;
-        p = p -> parent;
+    while (aux -> parent != NULL){
+        if(tree -> lower_than(aux -> pair -> key, aux -> parent -> pair -> key) == 1){
+            tree -> current = aux -> parent;
+            return aux -> parent -> pair;
+        }
+        aux = aux -> parent;
     }
-    if (p != NULL) return p -> pair;
     return NULL;
 }
 
