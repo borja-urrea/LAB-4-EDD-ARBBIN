@@ -172,8 +172,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     else{
         TreeNode* der = node -> right; 
         TreeNode* masPeque = minimum(der);
-        node -> pair -> key = masPeque -> pair -> key;
-        node -> pair -> value = masPeque -> pair -> value;
+        node -> pair = masPeque -> pair;
         removeNode(tree, masPeque);
     }
     return;
