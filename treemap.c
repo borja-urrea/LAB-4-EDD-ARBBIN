@@ -143,6 +143,29 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         free(node);
         return;
     }
+    //caso2
+    else if(node -> left == NULL || node -> right == NULL){
+        TreeNode* padre = node -> parent; 
+
+        if (padre -> left == node){
+            //es izq asi que el ptro left de padre apuntara al hijo de node
+            if (node -> left != NULL){
+                padre -> left = node -> left;
+            }else{
+                padre -> right = node -> right; 
+            }
+        } else {
+            if (node -> left != NULL){
+                padre -> left = node -> left;
+            } else{
+                padre -> right = node -> right;
+            }
+        }
+        free(node);
+        return;
+    } //caso 3
+    
+    return;
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
