@@ -171,10 +171,10 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     } //caso 3
     else{
         TreeNode* der = node -> right; 
-        TreeNode* masPeque = minimun(der);
+        TreeNode* masPeque = minimum(der);
         node -> pair -> key = masPeque -> pair -> key;
         node -> pair -> value = masPeque -> pair -> value;
-        removeNode(masPeque);
+        removeNode(tree, masPeque);
     }
     return;
 }
