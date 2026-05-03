@@ -155,6 +155,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
         if (padre == NULL){
             tree -> root = aux;
+            if (aux != NULL) aux -> parent = NULL;
         }
         else{
             if (padre -> left == node){
